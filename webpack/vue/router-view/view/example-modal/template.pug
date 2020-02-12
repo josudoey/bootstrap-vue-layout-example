@@ -1,0 +1,10 @@
+mixin main
+  b-modal#modal-1(title="BootstrapVue")
+    p.my-4 Hello from modal!
+  button.btn.btn-primary(v-b-modal.modal-1) Launch demo modal
+layout
+  span(slot="title") Modal Template
+  main
+    .card.mt-1
+      .card-body
+        +main

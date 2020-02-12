@@ -1,9 +1,6 @@
 import Base from '../base'
 export default {
   template: require('./template.pug'),
-  components: Object.assign({}, Base.components),
-  filters: Object.assign({}, Base.filters),
-  computed: Object.assign({}, Base.computed),
   data: function () {
     const query = this.$route.query
     return {
@@ -15,6 +12,9 @@ export default {
       currentPage: 1
     }
   },
+  components: Object.assign({}, Base.components),
+  filters: Object.assign({}, Base.filters),
+  computed: Object.assign({}, Base.computed),
   created: function () {
     this.search()
   },

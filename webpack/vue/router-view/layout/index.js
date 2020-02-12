@@ -1,15 +1,14 @@
-require('./style.css')
+import './style.css'
+import sidenav from './sidenav'
 export default {
   template: require('./template.pug'),
   data: function () {
     return {
-
+      isOpenSidebar: false
     }
   },
-  created: async function () {
-
-  },
-  watch: {
+  components: {
+    sidenav: sidenav
   },
   methods: {
     signOut: function () {

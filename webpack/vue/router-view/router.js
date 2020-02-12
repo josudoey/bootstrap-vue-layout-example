@@ -22,7 +22,7 @@ const page501 = function (resolve) { /* eslint-disable-line */
 exports = module.exports = {
   base: '/',
   mode: 'hash',
-  linkActiveClass: 'router-link-active',
+  linkActiveClass: 'active',
   routes: [{
     name: 'index',
     path: '/',
@@ -32,6 +32,12 @@ exports = module.exports = {
     path: '/example/table',
     component: function (resolve) {
       require(['./view/example-table'], resolve)
+    }
+  }, {
+    name: 'example-modal',
+    path: '/example/modal',
+    component: function (resolve) {
+      require(['./view/example-modal'], resolve)
     }
   }, {
     name: 'page404',

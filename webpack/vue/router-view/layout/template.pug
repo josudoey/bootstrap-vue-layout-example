@@ -1,2 +1,26 @@
-div.h-100
-  slot
+span
+  sidenav(ref="sidenav")
+    .list-group
+      .list-group-item.border-bottom.rounded-0 Hi! {{$store.state.auth.name}}
+      router-link.list-group-item.list-group-item-action.border-bottom.rounded-0(:to="{name:'example-table'}") Example Table
+      router-link.list-group-item.list-group-item-action.border-bottom.rounded-0(:to="{name:'example-modal'}") Example Modal
+      a.list-group-item.list-group-item-action.border-bottom.rounded-0(href="/sign-out") Sign Out
+  nav.navbar.navbar-dark.bg-dark
+    button.navbar-toggler.px-1.mx-1(type='button' @click="$refs.sidenav.toggle()")
+      span.navbar-toggler-icon
+    span.navbar-brand
+      slot(name="title")
+    ul.navbar-nav.ml-auto
+      li.nav-item
+        b-dropdown(right size="sm" variant="link")
+          template(slot="button-content")
+            .navbar-text {{$store.state.auth.name}}
+          b-dropdown-header.m-0.mx-2.p-0.px-1
+            p.m-0.p-0.px-1
+              h6.m-0 {{$store.state.auth.name}}
+              | {{$store.state.auth.name}}
+          b-dropdown-divider
+          b-dropdown-item(href='/sign-out') Sign Out
+
+  .container-fluid
+    slot
