@@ -1,0 +1,22 @@
+mixin main
+  .float-right
+    b-pagination(v-if="items.length" align="right" size="sm" :total-rows="total" v-model="currentPage" :per-page="limit" @change="changePage")
+    span(v-if="total") Displaying {{skip+1}} to {{skip+count}} of {{total}} items
+    span(v-else) Displaying 0 items
+  form.form-inline(@submit.prevent='changeRoute')
+    input.form-control(type='textbox', v-model='q', placeholder='search')
+  b-table(style="font-size: 14px;" hover :fields=`[
+    { key:'status', label:'Status' }
+    ]` :items="items")
+    template(slot="table-colgroup")
+      col(style="width:10%;")
+    template(v-slot:cell(status)="data")
+      span {{data.item.status}}
+
+layout
+  span(slot="title") Table Template
+  main.main
+    .container-fluid.p-1
+      .card
+        .card-body
+          +main
