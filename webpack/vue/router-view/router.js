@@ -1,7 +1,6 @@
-
 const page404 = function (resolve) {
   resolve({
-    template: '<h1>page not found</h1>',
+    template: '<layout><h1>page not found</h1></layout>',
     data: function () {
       return {}
     }
@@ -10,7 +9,7 @@ const page404 = function (resolve) {
 
 const page501 = function (resolve) { /* eslint-disable-line */
   resolve({
-    template: '<h1>page not implment</h1>',
+    template: '<layout><h1>page not implment</h1></layout>',
     data: function () {
       return {}
     }

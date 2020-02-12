@@ -1,10 +1,7 @@
 import { mapGetters } from 'vuex'
 import moment from 'moment'
-import layout from '../layout'
 export default {
-  components: {
-    layout: layout
-  },
+  components: {},
   computed: {
     ...mapGetters([
       'api'
