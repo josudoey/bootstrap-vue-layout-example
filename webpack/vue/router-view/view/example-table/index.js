@@ -1,4 +1,4 @@
-import Base from './base'
+import Base from '../base'
 export default {
   template: require('./template.pug'),
   components: Object.assign({}, Base.components),
